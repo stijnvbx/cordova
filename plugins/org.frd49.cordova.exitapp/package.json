@@ -1,0 +1,37 @@
+{
+  "_from": "git+https://github.com/FRD49/iOS-ExitApp.git",
+  "_id": "org.frd49.cordova.exitapp@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/org.frd49.cordova.exitapp",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/FRD49/iOS-ExitApp.git",
+    "rawSpec": "https://github.com/FRD49/iOS-ExitApp.git",
+    "saveSpec": "git+https://github.com/FRD49/iOS-ExitApp.git",
+    "fetchSpec": "https://github.com/FRD49/iOS-ExitApp.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/FRD49/iOS-ExitApp.git#635f50c8bc9b970b6260fe4d133bb5260243c4e8",
+  "_spec": "https://github.com/FRD49/iOS-ExitApp.git",
+  "_where": "C:\\Users\\vanbr\\Documents\\School\\Cordova\\notepad",
+  "bundleDependencies": false,
+  "cordova_name": "ExitApp",
+  "deprecated": false,
+  "description": "Implements navigator.app.exitApp on iOS ",
+  "engines": [],
+  "keywords": [
+    "exitApp"
+  ],
+  "license": "Apache 2.0",
+  "name": "org.frd49.cordova.exitapp",
+  "platforms": [
+    "ios"
+  ],
+  "version": "1.0.0"
+}

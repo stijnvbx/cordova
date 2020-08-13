@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "be.stijn.notepad"
+    },
+    "cordova-plugin-android-fingerprint-auth": {
+      "PACKAGE_NAME": "be.stijn.notepad"
+    },
+    "org.frd49.cordova.exitapp": {
+      "PACKAGE_NAME": "be.stijn.notepad"
+    }
+  },
+  "dependent_plugins": {}
+}
