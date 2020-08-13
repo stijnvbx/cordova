@@ -17,6 +17,20 @@ let notepad = function () {
 
         $('div.notes').empty();
         $('ul.sidenav').empty();
+
+        let url = "http://r0740656.sinners.be/index.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            let aboutnav = '<li><a href="#!" data-show="about">About</a></li>';
+            $('ul').append(aboutnav);
+            let about = `<div class="row spa test" id="about" style="display: block">
+            <div class="col s12">
+            <h4 class="content" data-task="about">About</h4>
+            <p>${result}</p>
+            </div>
+            </div>`;
+            $('div.notes').append(about);
+
         for (let i = 0; i < _notes.length; i++) {
             let navbar = `<li><a href="#!" data-show="${i}">${_notes[i]}</a><i class="material-icons circle red deleteNote" data-task="${i}">delete_forever</i></li>
             <li>
@@ -39,25 +53,7 @@ let notepad = function () {
                 $('.sidenav').sidenav('close');
             });
         }
-        let url = "http://r0740656.sinners.be/index.php";
-        $.getJSON(url, function(result) {
-            console.log(result);
-        let aboutnav = '<li><a href="#!" data-show="about">About</a></li>';
-        $('ul').append(aboutnav);
-        let about = `<div class="row spa" id="about" style="display: block">
-            <div class="col s12">
-            <h4 class="content" data-task="about">About</h4>
-            <p>${result}</p>
-            </div>
-            </div>`;
-        $('div.notes').append(about);
 
-        });
-        $('.sidenav').sidenav();
-        $('.sidenav a').click(function () {
-            $('.spa').hide();
-            $('#' + $(this).data('show')).show();
-            $('.sidenav').sidenav('close');
         });
     }
 
