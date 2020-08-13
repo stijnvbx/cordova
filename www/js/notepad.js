@@ -10,52 +10,38 @@ let notepad = function () {
         console.log(_content);
         localStorage.setItem('note', JSON.stringify(_notes));
         localStorage.setItem('content', JSON.stringify(_content));
-        _noteList();
     }
 
+    /**
     let _noteList = function() {
 
         $('div.notes').empty();
         $('ul.sidenav').empty();
 
-        let url = "http://r0740656.sinners.be/index.php";
-        $.getJSON(url, function(result) {
-            console.log(result);
-            let aboutnav = '<li><a href="#!" data-show="about">About</a></li>';
-            $('ul').append(aboutnav);
-            let about = `<div class="row spa test" id="about" style="display: block">
-            <div class="col s12">
-            <h4 class="content" data-task="about">About</h4>
-            <p>${result}</p>
-            </div>
-            </div>`;
-            $('div.notes').append(about);
-
         for (let i = 0; i < _notes.length; i++) {
-            let navbar = `<li><a href="#!" data-show="${i}">${_notes[i]}</a><i class="material-icons circle red deleteNote" data-task="${i}">delete_forever</i></li>
+            let navbar = `<li><a href="#!" data-show="${i}">${_notes[i]}</a><i class="material-icons circle red deleteNote">delete_forever</i></li>
             <li>
             <div class="divider"></div>
             </li>`;
             $('ul').append(navbar);
 
-            let NewNote = `<div class="row spa test" id="${i}" data-task="${i}">
+            let NewNote = `<div class="row spa test" id="${i}">
             <div class="col s12">
             <h4 class="title" contenteditable>${_notes[i]}</h4>
             <p contenteditable="true" class="content">${_content[i]}</p>
             </div>
             </div>`;
 
+            
             $('div.notes').append(NewNote);
-            $('.sidenav').sidenav();
             $('.sidenav a').click(function () {
                 $('.spa').hide();
                 $('#' + $(this).data('show')).show();
                 $('.sidenav').sidenav('close');
             });
         }
-
-        });
     }
+    */
 
 
     let init = function(){
@@ -68,18 +54,41 @@ let notepad = function () {
         if (content_str !== null) {
             _content = JSON.parse(content_str);
         }
-        _noteList();
     }
 
     let addNote = function(){
         console.log('nieuwe note toevoegen');
-        let name = prompt("Enter a name");
-        if (name == null || _notes.includes(name) != 0){
+        let note = prompt("Enter a name");
+        let content = "";
+        let id = _notes.length;
+        if (note == null || _notes.includes(note) != 0){
             alert("Invalid name");
             return;
         }
-        _notes.push(name);
-        _content.push("");
+
+        let navbar = `<li><a href="#!" data-show="${id}">${note}</a><i class="material-icons circle red deleteNote">delete_forever</i></li>
+            <li>
+            <div class="divider"></div>
+            </li>`;
+            $('ul').append(navbar);
+
+        let NewNote = `<div class="row spa test" id="${id}">
+            <div class="col s12">
+            <h4 class="title" contenteditable>${note}</h4>
+            <p contenteditable="true" class="content">${content}</p>
+            </div>
+            </div>`;
+
+        
+        $('div.notes').append(NewNote);
+        $('.sidenav a').click(function () {
+            $('.spa').hide();
+            $('#' + $(this).data('show')).show();
+            $('.sidenav').sidenav('close');
+        });
+            
+        _notes.push(note);
+        _content.push(content);
         _setLocalStorage();
     };
 
