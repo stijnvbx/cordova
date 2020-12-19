@@ -33,3 +33,4 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="org.frd49.cordova.exitapp" spec="git+https://github.com/FRD49/iOS-ExitApp.git" />
 </widget>
+
